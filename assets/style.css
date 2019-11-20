@@ -7,21 +7,22 @@ body{
     width: 100%;
     font-family: 'Six Caps', sans-serif;
     background-repeat: no-repeat;  
+    box-sizing: border-box;
 }
 
 .jumbotron{
     margin: 20px auto;
     display: flex;
-    border: 0.5px solid black;
-    height: 180vh;
-    width:100%;
-    border-radius: 2px;
+    border: 15px solid #100B16 ;
+    height: 160vh;
+    border-radius: 3px;
     background-image: url(images/corn-fields-under-white-clouds-with-blue-sky-during-daytime-158827.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .h1-text{
+    color: #100B16 ;
     margin-top: -30px;
     display: flex;
     justify-content: center; 
@@ -48,8 +49,34 @@ body{
     letter-spacing: 5px;
     font-size: 2.5vw;
     position: absolute;
-    animation-delay: 1.5s;
+    animation-delay: 1.3s;
     font-family: 'Bebas Neue', cursive;
     position: absolute;
-    right:120px;
+    right:230px;
 }
+#searchBox {
+    width: 120px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    background: transparent;
+    color: #343637;
+    border-radius: 100px;
+    border:1px solid black;
+   animation-delay: 1.5s;
+  }
+  
+  /* When the input field gets focus, change its width to 100% */
+  #searchBox:focus {
+    width: 100%;
+    border: 1px solid #343637;
+    outline: none;
+  }
+
+  .card{
+      position: absolute;
+      top: 300px;
+      opacity: 0.6;
+      height: 43%;
+      border: 3px solid #343637;
+      animation-delay: 1.3s;
+  }
