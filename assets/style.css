@@ -1,0 +1,55 @@
+html,
+body{
+    margin:0;
+    padding:0;
+    background-image: linear-gradient(to bottom right,#c5c5c2,#438399);
+    height: 180vh;
+    width: 100%;
+    font-family: 'Six Caps', sans-serif;
+    background-repeat: no-repeat;  
+}
+
+.jumbotron{
+    margin: 20px auto;
+    display: flex;
+    border: 0.5px solid black;
+    height: 180vh;
+    width:100%;
+    border-radius: 2px;
+    background-image: url(images/corn-fields-under-white-clouds-with-blue-sky-during-daytime-158827.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.h1-text{
+    margin-top: -30px;
+    display: flex;
+    justify-content: center; 
+    font-family: 'Bebas Neue', cursive; 
+    text-shadow: #c5c5c2 0px 0px 2px;  
+}
+#h1-1{
+   
+    letter-spacing: 20px;
+    line-height: 1;
+    margin-right: 200px;
+}
+#h1-2{
+    margin-left: 200px;
+    letter-spacing: 20px;
+    animation-delay: 500ms;
+}
+
+#time{
+    text-shadow: #c5c5c2 0px 0px 2px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    letter-spacing: 5px;
+    font-size: 2.5vw;
+    position: absolute;
+    animation-delay: 1.5s;
+    font-family: 'Bebas Neue', cursive;
+    position: absolute;
+    right:120px;
+}
