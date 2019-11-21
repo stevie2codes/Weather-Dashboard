@@ -3,40 +3,64 @@ body{
     margin:0;
     padding:0;
     background-image: linear-gradient(to bottom right,#c5c5c2,#438399);
-    height: 180vh;
+    height: 100vh;
     width: 100%;
     font-family: 'Six Caps', sans-serif;
     background-repeat: no-repeat;  
     box-sizing: border-box;
+    overflow: hidden;
+   
 }
 
 .jumbotron{
-    margin: 20px auto;
+    overflow-y:auto;
+    overflow-x: hidden;
+    height: 600px;;
+    margin: 60px auto;
     display: flex;
     border: 15px solid #100B16 ;
-    height: 160vh;
     border-radius: 3px;
     background-image: url(images/corn-fields-under-white-clouds-with-blue-sky-during-daytime-158827.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
+.jumbotron::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: transparent;
+
+}
+
+.jumbotron::-webkit-scrollbar
+{   
+    width: 10px;
+    background-color: transparent;
+}
+
+.jumbotron::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #6f8649;
+}
 .h1-text{
+   line-height: 1.5;
     color: #100B16 ;
     margin-top: -30px;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     font-family: 'Bebas Neue', cursive; 
     text-shadow: #c5c5c2 0px 0px 2px;  
 }
 #h1-1{
-   
     letter-spacing: 20px;
     line-height: 1;
-    margin-right: 200px;
+    
 }
 #h1-2{
-    margin-left: 200px;
+    margin-left: 400px;
     letter-spacing: 20px;
     animation-delay: 500ms;
 }
@@ -62,7 +86,7 @@ body{
     color: #343637;
     border-radius: 100px;
     border:1px solid black;
-   animation-delay: 1.5s;
+    animation-delay: 1.5s;
   }
   
   /* When the input field gets focus, change its width to 100% */
@@ -76,7 +100,19 @@ body{
       position: absolute;
       top: 300px;
       opacity: 0.6;
-      height: 43%;
+      height: 100%;
       border: 3px solid #343637;
       animation-delay: 1.3s;
+  }
+  
+  #main-figure{
+    background-color: white;
+    height: 20rem;
+    margin: 0 auto;
+   right: 600px;
+   top: 233px;
+   opacity: 0.7;
+   border: #100B16 3px solid;
+   border-radius: 3px;
+   animation-delay: 1.3s;
   }
