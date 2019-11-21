@@ -1,59 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous"
+  />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="assets/style.css">
     <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Calistoga&display=swap" rel="stylesheet">
     <title>Weather Dashboard</title>
 </head>
-<body>
-   
-    <div class="jumbotron jumbotron-fluid col-10" >
-        <div class="container">
-          <h1 class="display-3 h1-text ml-1 animated slideInDown" id="h1-1">Weather</h1>
-          <h1 class="display-3 h1-text animated slideInUp" id="h1-2">Dashboard</h1>
-          <p class="display-5 animated flipInX" id="time">time here</p>
 
-          
+<body>
+
+    <div class="jumbotron jumbotron-fluid col-10">
+        <div class="container">
+            <h1 class="display-3 h1-text ml-1 animated slideInDown" id="h1-1">Weather</h1>
+            <h1 class="display-3 h1-text animated slideInUp" id="h1-2">Dashboard</h1>
+            <p class="display-5 animated flipInX" id="time">time here</p>
+
+
         </div>
 
         <div class="card ml-2 mb-2 animated flipInX">
             <div class="card-header">
-                <input class="animated flipInX" id="searchBox" type="text" name="search" placeholder="   Search..">
+                <input  id="searchBox" class="animated flipInX" type="text" name="search" placeholder="   Search..">
+              <button><i class="fab fa-searchengin"></i></button> 
+                
             </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Austin</li>
-              <li class="list-group-item">Chicago</li>
-              <li class="list-group-item">Orlando</li>
-              <li class="list-group-item">New York</li>
-              <li class="list-group-item">San Francisco</li>
+            <ul id="cityList" class="list-group list-group-flush">
+                <li class="list-group-item">Austin</li>
+                <li class="list-group-item">Chicago</li>
+                <li class="list-group-item">Orlando</li>
+                <li class="list-group-item">New York</li>
+                <li class="list-group-item">San Francisco</li>
             </ul>
-          </div>
-          <figure class="figure  animated flipInX" id="main-figure"> 
-          </figure>
-
-          
-             <ul class="ul-container col-12" id="ul-5day">
-                 <li>test</li>
-                 <li>test</li>
-                 <li>test</li>
-                 <li>test</li>
-                 <li>test</li>
-             </ul>
-  
-
-      </div>
+        </div>
+        <figure class="figure  animated flipInX" id="main-figure">
+        </figure>
 
 
+        <ul class="ul-container col-12" id="ul-5day">
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+        </ul>
 
 
-      
+    </div>
+
+
+
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
