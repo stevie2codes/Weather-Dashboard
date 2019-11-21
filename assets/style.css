@@ -27,6 +27,7 @@ body{
 
 .jumbotron::-webkit-scrollbar-track{
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     border-radius: 10px;
     background-color: transparent;
 
@@ -46,6 +47,8 @@ body{
     background-color: #6f8649;
 }
 .h1-text{
+    text-align: center;
+    font-size: 7.5vw;
    line-height: 1.5;
     color: #100B16 ;
     margin-top: -30px;
@@ -55,28 +58,25 @@ body{
     text-shadow: #c5c5c2 0px 0px 2px;  
 }
 #h1-1{
-    letter-spacing: 20px;
+    letter-spacing: 22px;
     line-height: 1;
     
 }
 #h1-2{
-    margin-left: 400px;
-    letter-spacing: 20px;
-    animation-delay: 500ms;
+    letter-spacing: 10px;
+    
 }
 
 #time{
     text-shadow: #c5c5c2 0px 0px 2px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
     letter-spacing: 5px;
     font-size: 2.5vw;
     position: absolute;
-    animation-delay: 1.3s;
+    animation-delay:600ms;
     font-family: 'Bebas Neue', cursive;
-    position: absolute;
-    right:230px;
+    text-align: center;
+    left: 150px;
+   
 }
 #searchBox {
     width: 120px;
@@ -100,19 +100,39 @@ body{
       position: absolute;
       top: 300px;
       opacity: 0.6;
-      height: 100%;
-      border: 3px solid #343637;
-      animation-delay: 1.3s;
+      width: 15vw;
+      height: 37vh;
+      border: #100B16 3px solid;
+      animation-delay: 600ms;
   }
   
   #main-figure{
     background-color: white;
-    height: 20rem;
+    height: 37vh;
+    width: 40vw;
     margin: 0 auto;
-   right: 600px;
-   top: 233px;
+   position: absolute;
+   right: 200px;
+   top: 300px;
    opacity: 0.7;
    border: #100B16 3px solid;
    border-radius: 3px;
-   animation-delay: 1.3s;
+   animation-delay: 600ms;
+  }
+
+  .ul-container {
+      top: 700px;
+      position: absolute;
+     list-style: none;
+    display: inline-flex;
+  }
+#ul-5day li{
+    flex-wrap: wrap;
+      margin: 5px;
+      width: 400px;
+      height: 200px;;
+      background: white;
+    opacity: 0.7;
+    border: #100B16 3px solid;
+
   }
