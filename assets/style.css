@@ -141,3 +141,20 @@ button{
 button:focus{
 outline: none;
 }
+
+.city-name,
+.date,
+.humidity,
+.current-temp,
+.wind-speed{
+  margin: 14px;
+  color: black;
+  font-family: "Bebas Neue", cursive;
+}
+
+.icon-image{
+  width: 80px;
+  position: absolute;
+  top: 0;
+  left: 240px;
+}
