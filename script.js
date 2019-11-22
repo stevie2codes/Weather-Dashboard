@@ -12,16 +12,18 @@ console.log("hi")
     /*when user inputs a paramater a new li is added 
     and the api is called then displayed in main card*/
 
-    let citySaver = text => {
-        let li = document.createElement('li');
-        li.textContent = text;
-        $("#cityList").append(li);
+    function citySaver(text){
+        let listEl = document.createElement("<li>");
+        listEl.text(searchBox).val();
+        $(listEl).append("#cityList");
     }
+
+    
 
     $("button").on("click",function(event){
         event.preventDefault();
         let userInput = $(this).val();
-        citySaver(userInput);
+        citySaver();
         console.log("hello there");
         
     })
