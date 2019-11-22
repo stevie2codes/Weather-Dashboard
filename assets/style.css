@@ -63,14 +63,13 @@ body {
 
 #time {
   text-shadow: #c5c5c2 0px 0px 2px;
-  top: 230px;
   letter-spacing: 5px;
   font-size: 2.5vw;
   position: absolute;
   animation-delay: 600ms;
   font-family: "Bebas Neue", cursive;
   text-align: center;
-  left: 220px;
+  
 }
 #searchBox {
   width: 130px;
@@ -95,7 +94,6 @@ body {
   top: 300px;
   opacity: 0.6;
   width: 15vw;
-  height: 46vh;
   border: #100b16 3px solid;
   animation-delay: 600ms;
 }
@@ -111,7 +109,7 @@ body {
   opacity: 0.7;
   border: #100b16 3px solid;
   border-radius: 3px;
-  animation-delay: 600ms;
+  
 }
 
 .ul-container {
@@ -153,7 +151,7 @@ outline: none;
 }
 
 .icon-image{
-  width: 80px;
+  width: 60px;
   position: absolute;
   top: 0;
   left: 240px;
