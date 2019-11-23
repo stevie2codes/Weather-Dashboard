@@ -7,10 +7,7 @@ $(document).ready(function () {
 
     let myKey = "751635dd458149957afa00a64308bc08";
     $(".figure").css("display", "none");
-  
-//     function saveCity(){
-//         let 
-//    } 
+    
 
     
 
@@ -21,7 +18,8 @@ $(document).ready(function () {
 
         let userInput = $(this).prev().val(); //getting value of user input
         let queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&APPID=" + myKey;
-        let userInputCreateEl = $("<p>").text(userInput);
+        let userInputCreateEl = $('<p <button> />').addClass("created-city").text(userInput);
+        
         //calling the API
         $.ajax({
             url: queryURL,
@@ -44,7 +42,8 @@ $(document).ready(function () {
         })
     })
 
-
+   
+        
 
 
 
