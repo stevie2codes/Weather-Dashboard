@@ -18,7 +18,7 @@ $(document).ready(function () {
 
         let userInput = $(this).prev().val(); //getting value of user input
         let queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&APPID=" + myKey;
-        let userInputCreateEl = $('<p <button> />').addClass("created-city").text(userInput);
+        let userInputCreateEl = $('<li>').addClass("created-city btn btn-light").text(userInput);
         
         //calling the API
         $.ajax({
@@ -35,12 +35,41 @@ $(document).ready(function () {
             let temperature = $("<h4>").addClass("current-temp").text(`Current Temperature: ${tempF} F°`);
             let humidity = $("<h4>").addClass("humidity").text(`Humidity: ${response.main.humidity}%`);
             let windSpeed = $("<h4>").addClass("wind-speed").text(`Wind Speed ${response.wind.speed}`)
-
+            
             //Appending the values to the figure box
             $(".figure").append(city, iconImage, date, temperature, humidity, windSpeed);
-            $(".card").append(userInputCreateEl);
+            $("#cityList").append(userInputCreateEl);
+
+            $("ul").on("click",function(){
+     
+                alert(userInput);
+               })
+
         })
+        let fiveDayCall = "http://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&APPID=" + myKey;
+        
+
+
+        $.ajax({
+            url: fiveDayCall,
+            method: "GET"
+        }).then(function(response) {
+            console.log(response);
+            let listLength = response.list.length;
+            console.log(listLength);
+            for(let i = 0; i < listLength; i++){
+                cityName = response.list[i].city;
+                console.log(cityName);
+                }
+            
+            
+        })
+
     })
+
+    
+
+
 
    
         

@@ -12,6 +12,7 @@ body {
 }
 
 .jumbotron {
+  
   overflow-y: auto;
   overflow-x: hidden;
   min-height: 600px;
@@ -102,10 +103,10 @@ body {
 #main-figure {
   background-color: white;
   max-height: 40vh;
- min-width: 35vw;
+  min-width: 35vw;
   margin: 0 auto;
   position: absolute;
-  right: 200px;
+  right: 340px;
   top: 300px;
   opacity: 0.7;
   border: #100b16 3px solid;
