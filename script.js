@@ -46,32 +46,36 @@ $(document).ready(function () {
             })
 
         })
-
+        let dayDisplay = 1;
         let fiveDayCall = "http://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&APPID=" + myKey;
         //calling the 5 day forecast
-        $.ajax({         
+        $.ajax({
             url: fiveDayCall,
             method: "GET"
         }).then(function (response) {
             console.log(response);
             let listArray = response.list;
-            let days = 1;
             listArray.forEach(element => {   //use for each method to loop through object list
-            //   console.log(element);
-               let yearDateTime = element.dt_txt;
-            //    console.log (yearDatetime);    
+                //   console.log(element);
+                let yearDateTime = element.dt_txt;
+                //    console.log (yearDatetime);    
                 let currentDate = yearDateTime.split(" ")[0]; //splitting the full date
                 let currentTime = yearDateTime.split(" ")[1]; //and time  in the object
 
-                if(currentTime === "06:00:00"){
+                if (currentTime === "18:00:00") {
                     let day = currentDate.split("-")[2];
                     let month = currentDate.split("-")[1];
                     let year = currentDate.split("-")[0];
                     
+                    $("#day-" + dayDisplay).children(".date-display").html(`${month}/${day}/${year}`);
+                    $("#day-" + dayDisplay).children("#daily-icon").attr("src", "http://openweathermap.org/img/w/" + element.weather[0].icon + ".png");
+                    $("#day-" + dayDisplay).children("#5day-humidity").html(`Humidity: ${element.main.humidity} `);
+                
+                 dayDisplay++   
                 }
             })
-           
-       
+
+
         })
 
     })
