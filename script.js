@@ -48,24 +48,27 @@ $(document).ready(function () {
         })
 
         let fiveDayCall = "http://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&APPID=" + myKey;
-
-        $.ajax({
+        //calling the 5 day forecast
+        $.ajax({         
             url: fiveDayCall,
             method: "GET"
         }).then(function (response) {
             console.log(response);
             let listArray = response.list;
             let days = 1;
-            listArray.forEach(element => {
+            listArray.forEach(element => {   //use for each method to loop through object list
             //   console.log(element);
-               let yearAndDt = element.dt_txt;
-            //    console.log (yearAndDt);    
-                let currentYear = yearAndDt.split(" ")[0];
-                // console.log(currentYear);
-                let currentDate = yearAndDt.split(" ")[1];
-                console.log(currentDate);
-            
-                
+               let yearDateTime = element.dt_txt;
+            //    console.log (yearDatetime);    
+                let currentDate = yearDateTime.split(" ")[0]; //splitting the full date
+                let currentTime = yearDateTime.split(" ")[1]; //and time  in the object
+
+                if(currentTime === "06:00:00"){
+                    let day = currentDate.split("-")[2];
+                    let month = currentDate.split("-")[1];
+                    let year = currentDate.split("-")[0];
+                    
+                }
             })
            
        
