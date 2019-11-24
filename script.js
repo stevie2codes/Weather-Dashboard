@@ -54,24 +54,21 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
             console.log(response);
-            let listLength = response.list.length;
-debugger;
-            for (let i = 0; i < listLength; i++) {
-                let listDtAndHour = response.list[i].dt_text;
-                let listDt = listDtAndHour.split(" ")[0];
-                let listHour = listDtAndHour.split(" ")[1];
-
-                if (listHour === "06:00:00") {
-                    let listYear = listDt.split("_")[0];
-                    console.log(listYear);
-                }
-
-
-            }
-
-
-
-
+            let listArray = response.list;
+            let days = 1;
+            listArray.forEach(element => {
+            //   console.log(element);
+               let yearAndDt = element.dt_txt;
+            //    console.log (yearAndDt);    
+                let currentYear = yearAndDt.split(" ")[0];
+                // console.log(currentYear);
+                let currentDate = yearAndDt.split(" ")[1];
+                console.log(currentDate);
+            
+                
+            })
+           
+       
         })
 
     })
