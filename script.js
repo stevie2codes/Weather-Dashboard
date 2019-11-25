@@ -62,14 +62,15 @@ $(document).ready(function () {
                 let currentDate = yearDateTime.split(" ")[0]; //splitting the full date
                 let currentTime = yearDateTime.split(" ")[1]; //and time  in the object
 
-                if (currentTime === "18:00:00") {
+                if (currentTime === "15:00:00") {
                     let day = currentDate.split("-")[2];
                     let month = currentDate.split("-")[1];
                     let year = currentDate.split("-")[0];
                     
                     $("#day-" + dayDisplay).children(".date-display").html(`${month}/${day}/${year}`);
                     $("#day-" + dayDisplay).children("#daily-icon").attr("src", "http://openweathermap.org/img/w/" + element.weather[0].icon + ".png");
-                    $("#day-" + dayDisplay).children("#5day-humidity").html(`Humidity: ${element.main.humidity} `);
+                    $("#day-" + dayDisplay).children("#daily-temp").html(`Temperature: ${parseInt((element.main.temp - 273.15) * 1.8 + 32)}°F`);
+                    $("#day-" + dayDisplay).children("#5day-humidity").html(`Humidity: ${element.main.humidity}% `);
                 
                  dayDisplay++   
                 }
