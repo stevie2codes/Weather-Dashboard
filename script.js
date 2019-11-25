@@ -1,24 +1,22 @@
 
 $(document).ready(function () {
 
-    let searchBox = $("#searchBox");
-    let time = moment().format("LL");
-    $("#time").text("Enter a City");
+    $("#search-btn").click(weatherNow);
+    $("#search-btn").click(fiveDayForecast);
 
+    let time = moment().format("LL");
     let myKey = "751635dd458149957afa00a64308bc08";
     $(".figure").css("display", "none");
-    $("#search-container").css("left", "450px");
+    $("#search-container").css("left", "320px");
 
     //Search button makes it all happen  
-    $("button").on("click", function (event) {
+    function weatherNow(event) {
         event.preventDefault();
         $(".figure").empty(); //empty search results upon each new search
         $("#search-container").animate({ left: "10px" }, "400ms");
-
         let userInput = $(this).prev().val(); //getting value of user input
         let queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&APPID=" + myKey;
         let userInputCreateEl = $('<li>').addClass("created-city btn btn-light").text(userInput);
-
         //calling the API
         $.ajax({
             url: queryURL,
@@ -34,12 +32,14 @@ $(document).ready(function () {
             let temperature = $("<h4>").addClass("current-temp").text(`Current Temperature: ${tempF} F°`);
             let humidity = $("<h4>").addClass("humidity").text(`Humidity: ${response.main.humidity}%`);
             let windSpeed = $("<h4>").addClass("wind-speed").text(`Wind Speed ${response.wind.speed} mph`)
-
             //Appending the values to the figure box
             $(".figure").append(city, iconImage, date, temperature, humidity, windSpeed);
             $("#cityList").append(userInputCreateEl);
         })
-        //end current day call begin Five day forecast call
+    }
+    //end current day call begin Five day forecast call
+    function fiveDayForecast() {
+        let userInput = $(this).prev().val(); //getting value of user input    
         let dayDisplay = 1;
         let fiveDayCall = "http://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&APPID=" + myKey;
         //calling the 5 day forecast
@@ -60,7 +60,6 @@ $(document).ready(function () {
                     let day = currentDate.split("-")[2];
                     let month = currentDate.split("-")[1];
                     let year = currentDate.split("-")[0];
-
                     $("#day-" + dayDisplay).children(".date-display").html(`${month}/${day}/${year}`);
                     $("#day-" + dayDisplay).children("#daily-icon").attr("src", "http://openweathermap.org/img/w/" + element.weather[0].icon + ".png");
                     $("#day-" + dayDisplay).children("#daily-temp").html(`Temperature: ${parseInt((element.main.temp - 273.15) * 1.8 + 32)}°F`);
@@ -70,33 +69,18 @@ $(document).ready(function () {
                 }
             })
         })
-    })
-    
+    }
+
 
     function saveInput(event) {
-        
+
         localStorage.setItem("City", userInput);
     };
 
     $("ul").on("click", function (event) {
-            saveInput(localStorage.getItem("City"));
-        
+        saveInput(localStorage.getItem("City"));
+
     })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 });
