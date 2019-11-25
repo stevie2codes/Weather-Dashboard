@@ -71,11 +71,17 @@ $(document).ready(function () {
             })
         })
     })
+    
+
+    function saveInput(event) {
+        
+        localStorage.setItem("City", userInput);
+    };
+
     $("ul").on("click", function (event) {
-        alert($(event.target).text());
+            saveInput(localStorage.getItem("City"));
+        
     })
-
-
 
 
 
