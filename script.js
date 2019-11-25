@@ -7,14 +7,13 @@ $(document).ready(function () {
 
     let myKey = "751635dd458149957afa00a64308bc08";
     $(".figure").css("display", "none");
+    $("#search-container").css("left", "450px");
 
-
-
-
-    //Search button makes it all happen
+    //Search button makes it all happen  
     $("button").on("click", function (event) {
         event.preventDefault();
         $(".figure").empty(); //empty search results upon each new search
+        $("#search-container").animate({ left: "10px" }, "400ms");
 
         let userInput = $(this).prev().val(); //getting value of user input
         let queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&APPID=" + myKey;
@@ -39,11 +38,6 @@ $(document).ready(function () {
             //Appending the values to the figure box
             $(".figure").append(city, iconImage, date, temperature, humidity, windSpeed);
             $("#cityList").append(userInputCreateEl);
-
-            $("ul").on("click", function () {
-
-                alert(userInput);
-            })
         })
         //end current day call begin Five day forecast call
         let dayDisplay = 1;
@@ -71,13 +65,15 @@ $(document).ready(function () {
                     $("#day-" + dayDisplay).children("#daily-icon").attr("src", "http://openweathermap.org/img/w/" + element.weather[0].icon + ".png");
                     $("#day-" + dayDisplay).children("#daily-temp").html(`Temperature: ${parseInt((element.main.temp - 273.15) * 1.8 + 32)}°F`);
                     $("#day-" + dayDisplay).children("#5day-humidity").html(`Humidity: ${element.main.humidity}% `);
-
                     dayDisplay++
+
                 }
             })
         })
     })
-
+    $("ul").on("click", function (event) {
+        alert($(event.target).text());
+    })
 
 
 

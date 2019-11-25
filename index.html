@@ -5,12 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-    crossorigin="anonymous"
-  />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
@@ -25,21 +21,21 @@
         <div class="container">
             <h1 class="display-3 h1-text ml-1 animated slideInDown" id="h1-1">Weather</h1>
             <h1 class="display-3 h1-text animated slideInUp" id="h1-2">Dashboard</h1>
-            <p class="display-5 animated flipInX" id="time">time here</p>
+            <!-- <p class="display-5 animated flipInX" id="time">time here</p> -->
 
 
         </div>
 
-        <div class="card ml-2 animated flipInX">
+        <div id="search-container" class=" ml-2 card animated flipInX">
             <div class="card-header">
-                    <form class="example" action="action_page.php">
-                            <input id="searchBox" type="text" placeholder="Search.." name="search">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                          </form>
-                
+                <form class="example" action="action_page.php">
+                    <input id="searchBox" type="text" placeholder="Enter A City.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+
             </div>
             <ul id="cityList" class="list-group list-group-flush">
-                
+
             </ul>
         </div>
         <figure class="figure  animated flipInX" id="main-figure">
