@@ -68,13 +68,10 @@ body {
   display: flex;
   justify-content: center;
   align-content: center;
-  align-items: center;
-  
+  align-items: center; 
 }
 
 #searchBox {
- 
-
   min-width: 15vw;
   max-width: 5vw;
   max-height: 4vh;
@@ -90,6 +87,10 @@ body {
 #searchBox:focus {
   border: none;
   outline: none;
+}
+
+.created-city{
+  cursor: pointer;
 }
 
 .card {
@@ -140,7 +141,7 @@ body {
   border: black 5px solid;
   border-radius: 3px;
 }
-button {
+#search-btn{
   font-size: 1rem;
   position: absolute;
   right: 5px;
@@ -149,8 +150,14 @@ button {
   color: royalblue;
   border-radius: 50%;
 }
-button:focus {
+#search-btn:focus {
   outline: none;
+}
+
+.clr-btn{
+  width: 60px;
+  height: 30px;
+  border-radius: 100px;
 }
 
 .city-name,

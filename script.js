@@ -84,21 +84,26 @@ $(document).ready(function () {
     // locatlstorage.setItem('items',JSON.stringify(itemsArray));
     let data = JSON.parse(localStorage.getItem('items'));
 
-    const liMaker = text => {
+    let liMaker = text => {
         let li = $('<li>').addClass("created-city btn btn-light");
         li.text(text);
         ul.append(li);
       }
       $("#search-btn").click(function() {
-        itemsArray.push(userInput)
-        localStorage.setItem('items', JSON.stringify(itemsArray))
-        liMaker(userInput)
-        // input.value = ''
+        itemsArray.push(userInput);
+        localStorage.setItem('items', JSON.stringify(itemsArray));
+        liMaker(userInput);
+        
       })
       
       data.forEach(item => {
         liMaker(item);
       })
+      $(".clr-btn").on("click", function () {
+          $(".created-city").remove();
+        localStorage.clear();
+        // location.reload();
+    })
       
       
     
