@@ -3,21 +3,25 @@ $(document).ready(function () {
 
     $("#search-btn").click(weatherNow);
     $("#search-btn").click(fiveDayForecast);
+     
     let userInput;
     let time = moment().format("LL");
     let myKey = "751635dd458149957afa00a64308bc08";
     $(".figure").css("display", "none");
     $("#search-container").css("left", "320px");
+    $(".ul-container").css("display","none");
 
-    //Search button makes it all happen  
+
+    //Function to call current weather  
     function weatherNow(event) {
         event.preventDefault();
         $(".figure").empty(); //empty search results upon each new search
         $("#search-container").animate({ left: "10px" }, "400ms");
+        $(".ul-container").css("display","flex");
          userInput = $(this).prev().val(); //getting value of user input
         let queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&APPID=" + myKey;
-        let userInputCreateEl = $('<li>').addClass("created-city btn btn-light").text(userInput);
-        localStorage.setItem("city",userInput);
+        // let userInputCreateEl = $('<li>').addClass("created-city btn btn-light").text(userInput);
+    
         //calling the API
         $.ajax({
             url: queryURL,
@@ -32,11 +36,10 @@ $(document).ready(function () {
             let tempF = parseInt((response.main.temp - 273.15) * 1.8 + 32); //kelvin to farenheight Conversion
             let temperature = $("<h4>").addClass("current-temp").text(`Current Temperature: ${tempF} F°`);
             let humidity = $("<h4>").addClass("humidity").text(`Humidity: ${response.main.humidity}%`);
-            let windSpeed = $("<h4>").addClass("wind-speed").text(`Wind Speed ${response.wind.speed} mph`)
+            let windSpeed = $("<h4>").addClass("wind-speed").text(`Wind Speed ${response.wind.speed} mph`);
             //Appending the values to the figure box
             $(".figure").append(city, iconImage, date, temperature, humidity, windSpeed);
-            $("#cityList").append(userInputCreateEl);
-            
+            // $("#cityList").append(userInputCreateEl);     
         })
     }
     //end current day call begin Five day forecast call
@@ -72,8 +75,32 @@ $(document).ready(function () {
             })
         })
     }
+    //-------------------------Local Storage-----------//
+    let ul = $("#cityList");
+    //ul id = "cityList" where the cities go
+    //<input id="searchBox"  
+    let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
+    // locatlstorage.setItem('items',JSON.stringify(itemsArray));
+    let data = JSON.parse(localStorage.getItem('items'));
+
+    const liMaker = text => {
+        let li = $('<li>').addClass("created-city btn btn-light");
+        li.text(text);
+        ul.append(li);
+      }
+      $("#search-btn").click(function() {
+        itemsArray.push(userInput)
+        localStorage.setItem('items', JSON.stringify(itemsArray))
+        liMaker(userInput)
+        // input.value = ''
+      })
+      
+      data.forEach(item => {
+        liMaker(item);
+      })
+      
+      
     
-  
-   
+
 });
