@@ -65,6 +65,7 @@ body {
 }
 
 #search-container{
+  
   display: flex;
   justify-content: center;
   align-content: center;
@@ -83,7 +84,7 @@ body {
   border: none;
 }
 
-/* When the input field gets focus, change its width to 100% */
+
 #searchBox:focus {
   border: none;
   outline: none;
@@ -100,6 +101,11 @@ body {
   min-width: 5vw;
   border: black 5px solid;
   animation-delay: 600ms;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+  
 }
 
 
@@ -155,9 +161,12 @@ body {
 }
 
 .clr-btn{
-  width: 60px;
+  background-color: #438399;
+  color: white;
+  width: 90px;
   height: 30px;
-  border-radius: 100px;
+  border-radius: 5px;
+  margin: 5px;
 }
 
 .city-name,
