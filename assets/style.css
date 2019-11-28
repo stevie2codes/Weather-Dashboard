@@ -65,11 +65,10 @@ body {
 }
 
 #search-container{
-  
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center; 
+  position: absolute;
+  left: 37%;
+  top: 50%;
+  min-width: 25vw;
 }
 
 #searchBox {
@@ -161,6 +160,7 @@ body {
 }
 
 .clr-btn{
+  align-self: center;
   background-color: #438399;
   color: white;
   width: 90px;

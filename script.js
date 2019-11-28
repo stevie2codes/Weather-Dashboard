@@ -1,16 +1,17 @@
 
 $(document).ready(function () {
-
+    //click listeners to activate the functions and Calls
     $("#search-btn").click(weatherNow);
     $("#search-btn").click(fiveDayForecast);
     $("#cityList").click(weatherNow);
+    $("#cityList").click(fiveDayForecast);
+
     let userInput;
     let time = moment().format("LL");
     let myKey = "751635dd458149957afa00a64308bc08";
     $(".figure").css("display", "none");
-    $("#search-container").css("left", "320px");
+    // $("#search-container").css("left", "320px");
     $(".ul-container").css("display", "none");
-
 
     //Function to call current weather  
     function weatherNow(event) {
@@ -24,7 +25,7 @@ $(document).ready(function () {
             userInput = $(this).prev().val(); //getting value of user input
         }
         $(".figure").empty(); //empty search results upon each new search
-        $("#search-container").animate({ left: "10px" }, "400ms");
+        $("#search-container").animate({ "left": "10px"}, 600);
         $(".ul-container").css("display", "flex");
         let queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&APPID=" + myKey;
         //calling the API
@@ -50,7 +51,13 @@ $(document).ready(function () {
     }
     //end current day call begin Five day forecast call
     function fiveDayForecast() {
-        userInput = $(this).prev().val(); //getting value of user input    
+        if ($(this).attr("id") === "cityList") {
+            let x = event.target;
+            userInput = $(x).text();
+            console.log(userInput);
+        } else {
+            userInput = $(this).prev().val(); //getting value of user input
+        }
         let dayDisplay = 1;
         let fiveDayCall = "http://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&APPID=" + myKey;
         //calling the 5 day forecast
@@ -66,7 +73,8 @@ $(document).ready(function () {
                 //    console.log (yearDatetime);    
                 let currentDate = yearDateTime.split(" ")[0]; //splitting the full date
                 let currentTime = yearDateTime.split(" ")[1]; //and time  in the object
-
+                
+                //getting a specific time of day to pull data from and insert inot the DOM
                 if (currentTime === "15:00:00") {
                     let day = currentDate.split("-")[2];
                     let month = currentDate.split("-")[1];
@@ -100,27 +108,11 @@ $(document).ready(function () {
 
     data.forEach(item => {
         liMaker(item);
+        console.log(item);
     })
     $(".clr-btn").on("click", function () {
         $(".created-city").remove();
         localStorage.clear();
+        $("input").empty();
     })
-
-    //targets the populated city in the ul list
-    // function savedCity(event){
-    //     let x = event.target
-    //     if ($(this).attr("id") === "cityList") {
-    //         userInput = $(x).text();  
-    //     }
-    // }
-
-    // $("#cityList").on("click", function (event) {
-    //     let x = event.target
-    //     if ($(this).attr("id") === "cityList") {
-    //         userInput = $(x).text();
-    //     }
-    // })
-
-
-
 });
