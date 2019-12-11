@@ -27,7 +27,7 @@ $(document).ready(function () {
         $(".figure").empty(); //empty search results upon each new search
         $("#search-container").animate({ "left": "10px"}, 600);
         $(".ul-container").css("display", "flex");
-        let queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&APPID=" + myKey;
+        let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&APPID=" + myKey;
         //calling the API
         $.ajax({
             url: queryURL,
@@ -38,7 +38,7 @@ $(document).ready(function () {
             //setting the values to a new DOM element 
             let city = $("<h1>").addClass("city-name").text(`City: ${response.name}`);
             let date = $("<h3>").addClass("date").text(`Date: ${time}`);
-            let iconImage = $("<img>").addClass("icon-image").attr("src", "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png");
+            let iconImage = $("<img>").addClass("icon-image").attr("src", "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png");
             let tempF = parseInt((response.main.temp - 273.15) * 1.8 + 32); //kelvin to farenheight Conversion
             let temperature = $("<h4>").addClass("current-temp").text(`Current Temperature: ${tempF} F°`);
             let humidity = $("<h4>").addClass("humidity").text(`Humidity: ${response.main.humidity}%`);
@@ -59,7 +59,7 @@ $(document).ready(function () {
             userInput = $(this).prev().val(); //getting value of user input
         }
         let dayDisplay = 1;
-        let fiveDayCall = "http://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&APPID=" + myKey;
+        let fiveDayCall = "https://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&APPID=" + myKey;
         //calling the 5 day forecast
         $.ajax({
             url: fiveDayCall,
