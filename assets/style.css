@@ -15,7 +15,7 @@ body {
 .jumbotron {
   overflow-y: auto;
   overflow-x: hidden;
-  min-height: 600px;
+  height: 85vh;
   margin: 60px auto;
   display: flex;
   border: 15px solid #100b16;
@@ -23,6 +23,9 @@ body {
   background-image: url(images/corn-fields-under-white-clouds-with-blue-sky-during-daytime-158827.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .jumbotron::-webkit-scrollbar-track {
@@ -44,6 +47,7 @@ body {
   background-color: #f1f1f1;
 }
 .h1-text { 
+  
   text-align: center;
   line-height: 1.5;
   color:rgba(0,0,0,0.8);
@@ -65,15 +69,15 @@ body {
 }
 
 #search-container{
+  display: flex;
+  margin: 0 auto;  
   position: absolute;
-  left: 37%;
-  top: 50%;
-  min-width: 25vw;
+  top: 30vh;
+ 
 }
 
 #searchBox {
-  min-width: 15vw;
-  max-width: 5vw;
+  max-width: 30vw;
   max-height: 4vh;
   background: transparent;
   color: #343637;
@@ -95,7 +99,7 @@ body {
 
 .card {
   position: absolute;
-  top: 300px;
+  top: 30vh;
   opacity: 0.72;
   min-width: 5vw;
   border: black 5px solid;
@@ -107,29 +111,28 @@ body {
   
 }
 
-
+.fig-container{
+display: flex;
+justify-content: center;
+margin: 0 auto;
+position: absolute;
+top: 45vh;
+}
 #main-figure {
-  top: 40%;
-  left: 32%;
-  margin-right: -50%;
   position: absolute;
   background-color: white;
   min-height: 9vh;
-  min-width: 30vw;
-  max-width: 50vw;
+  width: 60vw;
   opacity: 0.72;
   border: #100b16 8px solid;
   border-radius: 3px;
   text-align: center;
 }
-.day-text{
-  position: absolute;
-  bottom: 190px;
-}
+
 
 .ul-container {
   font-size: 100%;
-  top: 650px;
+  top: 90vh;
   position: absolute;
   list-style: none;
   display: flex;
@@ -140,7 +143,7 @@ body {
   flex-wrap: wrap;
   margin: 8px auto;
   width: 150px;
-  max-height: 180px;
+  min-height: 180px;
   background: white;
   opacity: 0.8;
   border: black 5px solid;
@@ -188,6 +191,9 @@ body {
   font-family: "Bebas Neue", cursive;
   color: black;
   font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 #daily-icon {
   width: 50px;
