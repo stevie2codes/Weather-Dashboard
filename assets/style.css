@@ -47,11 +47,10 @@ body {
   background-color: #f1f1f1;
 }
 .h1-text { 
-  
+  font-size: 7vmax;
   text-align: center;
-  line-height: 1.5;
+  line-height: 1;
   color:rgba(0,0,0,0.8);
-  margin-top: -30px;
   display: flex;
   justify-content: center;
   font-family: "Bebas Neue", cursive;
@@ -61,18 +60,20 @@ body {
 
 }
 #h1-1 {
-  letter-spacing: 22px;
+  letter-spacing: 15px;
   line-height: 1;
+  margin: 5px;
 }
 #h1-2 {
   letter-spacing: 10px;
+  margin: 5px;
 }
 
 #search-container{
   display: flex;
   margin: 0 auto;  
-  position: absolute;
-  top: 30vh;
+  position:absolute;
+  top: 40vh;
  
 }
 
@@ -116,7 +117,7 @@ display: flex;
 justify-content: center;
 margin: 0 auto;
 position: absolute;
-top: 45vh;
+top: 50vh;
 }
 #main-figure {
   position: absolute;
@@ -132,7 +133,7 @@ top: 45vh;
 
 .ul-container {
   font-size: 100%;
-  top: 90vh;
+  top: 110vh;
   position: absolute;
   list-style: none;
   display: flex;

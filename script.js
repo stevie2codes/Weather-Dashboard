@@ -25,7 +25,7 @@ $(document).ready(function () {
             userInput = $(this).prev().val(); //getting value of user input
         }
         $(".figure").empty(); //empty search results upon each new search
-        $("#search-container").animate({ "top": "20vh"}, 600);
+        $("#search-container").animate({ "top": "30vh"}, 600);
         $(".ul-container").css("display", "flex");
         let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&APPID=" + myKey;
         //calling the API
