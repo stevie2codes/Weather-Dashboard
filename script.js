@@ -25,7 +25,7 @@ $(document).ready(function () {
             userInput = $(this).prev().val(); //getting value of user input
         }
         $(".figure").empty(); //empty search results upon each new search
-        $("#search-container").animate({ "top": "30vh"}, 600);
+        $("#search-container").animate({ "left": "200px" }, 600);
         $(".ul-container").css("display", "flex");
         let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&APPID=" + myKey;
         //calling the API
@@ -73,7 +73,7 @@ $(document).ready(function () {
                 //    console.log (yearDatetime);    
                 let currentDate = yearDateTime.split(" ")[0]; //splitting the full date
                 let currentTime = yearDateTime.split(" ")[1]; //and time  in the object
-                
+
                 //getting a specific time of day to pull data from and insert inot the DOM
                 if (currentTime === "15:00:00") {
                     let day = currentDate.split("-")[2];
