@@ -19,7 +19,7 @@ body {
   width: 100vw;
   margin: 60px auto;
   display: flex;
-  border: 2px solid #100b16;
+
   border-radius: 3px;
   background-image: url(images/corn-fields-under-white-clouds-with-blue-sky-during-daytime-158827.jpg);
   background-size: cover;
@@ -27,6 +27,7 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
+  box-shadow: 0px 5px 20px rgba(28, 28, 28, 0.851);
 }
 
 .jumbotron::-webkit-scrollbar-track {
@@ -105,7 +106,8 @@ body {
   top: 30vh;
   opacity: 0.72;
   min-width: 5vw;
-  border: black 2px solid;
+  padding: 10px;
+  box-shadow: 0px 5px 20px rgba(28, 28, 28, 0.851);
   animation-delay: 600ms;
   display: flex;
   justify-content: center;
@@ -124,12 +126,13 @@ body {
 #main-figure {
   position: absolute;
   background-color: white;
-  max-height: 20rem;
+  height: auto;
   min-width: 20rem;
   opacity: 0.72;
-  border: #100b16 2px solid;
+  box-shadow: 0px 5px 20px rgba(28, 28, 28, 0.851);
   border-radius: 3px;
   text-align: center;
+  padding: 20px;
 }
 
 .ul-container {
@@ -142,15 +145,17 @@ body {
 }
 
 #ul-5day li {
-  font-size: 1.2rem;
+  font-size: 1rem;
   flex-wrap: wrap;
   margin: 8px auto;
   width: 150px;
-  min-height: 180px;
+  height: auto;
   background: white;
   opacity: 0.8;
-  border: black 2px solid;
+  box-shadow: 0px 5px 20px rgba(28, 28, 28, 0.851);
   border-radius: 3px;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px;
 }
 
 #search-btn {
@@ -184,7 +189,8 @@ body {
 .wind-speed {
   margin: 10px;
   color: black;
-  font-family: "Bebas Neue", cursive;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
 }
 
 .created-city {

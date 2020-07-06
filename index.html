@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="assets/style.css">
     <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Calistoga&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
     <title>Weather Dashboard</title>
 </head>
 
@@ -22,23 +24,23 @@
             <h1 class="display-3 h1-text ml-1 animated slideInDown" id="h1-1">Weather</h1>
             <h1 class="display-3 h1-text animated slideInUp" id="h1-2">Dashboard</h1>
         </div>
-        
+
         <div id="search-container" class="card animated flipInX">
-            <div class="card-header">   
+            <div class="card-header">
                 <form class="example " action="" autocomplete="off">
                     <input id="searchBox" type="text" placeholder="Enter A City.." name="search">
                     <button id="search-btn" type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
             <button class="clr-btn">Clear</button>
-            <ul  id="cityList" class="list-group list-group-flush">
+            <ul id="cityList" class="list-group list-group-flush">
             </ul>
         </div>
         <div class="fig-container">
-        <figure class="figure animated flipInX" id="main-figure">
-        </figure>
-            </div>
-         
+            <figure class="figure animated flipInX" id="main-figure">
+            </figure>
+        </div>
+
         <ul class="ul-container col-12" id="ul-5day">
             <h2 class="day-text">5-Day Forecast</h2>
             <li id="day-1">
